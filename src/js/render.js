@@ -1,5 +1,5 @@
 import { showModal } from "./modal.js";
-import { getRecipes } from "./localStorage.js";
+import { getRecipes, setRecipes } from "./localStorage.js";
 
 export function renderRecipes() {
   const recipes = getRecipes();
