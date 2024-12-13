@@ -93,3 +93,17 @@ export function renderRecipe(recipe) {
         </div>
       `;
 }
+
+function handleDeleteRecipe(e) {
+  const recipeName = e.currentTarget.dataset.recipeName;
+  const prompt = `Are you sure you want to delete the recipe for ${recipeName}?`;
+
+  if (confirm(prompt)) {
+    const recipes = getRecipes();
+    const updatedRecipes = recipes.filter(
+      (recipe) => recipe.recipeName !== recipeName
+    );
+    setRecipes(updatedRecipes);
+    renderRecipes();
+  }
+}
